@@ -1,3 +1,15 @@
+---
+title: Polyglot Podcaster
+emoji: 🎙️
+colorFrom: purple
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.28.0
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # 🎙️ Polyglot Podcaster
 
 A Streamlit-based web application for zero-shot multilingual voice cloning using the Chatterbox TTS model.
