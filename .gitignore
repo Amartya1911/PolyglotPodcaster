@@ -18,6 +18,29 @@ coverage.xml
 *.log
 .git
 .mypy_cache
+
+# Generated files
+output.wav
+*.wav
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Model cache (will be downloaded on Spaces)
+.cache/
+huggingface/
+
+# Logs
+*.log
+logs/
 .pytest_cache
 .hypothesis
 
