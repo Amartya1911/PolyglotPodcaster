@@ -8,4 +8,10 @@ librosa>=0.10.0
 numpy>=1.21.0,<2.0.0
 huggingface-hub>=0.19.0
 googletrans==4.0.0-rc1
-chatterbox-tts>=0.1.0
+perth-tts
+tqdm
+scipy
+tokenizers
+sentencepiece
+protobuf
+chatterbox-tts==0.1.4
