@@ -4,9 +4,11 @@ A Streamlit-based web application for zero-shot multilingual voice cloning using
 
 ## 🌟 Features
 
-- **Zero-Shot Voice Cloning**: Upload a short voice sample and generate speech in any supported language
+- **Zero-Shot Voice Cloning**: Record your voice or upload a short voice sample and generate speech in any supported language
+- **Browser-Based Recording**: Record audio directly in your browser - no need to upload files!
+- **File Upload Support**: Alternative option to upload pre-recorded .wav files
 - **23 Languages Supported**: English, Spanish, French, German, Italian, Portuguese, Polish, Turkish, Russian, Dutch, Arabic, Swedish, Danish, Greek, Finnish, Hebrew, Hindi, Japanese, Korean, Malay, Norwegian, Swahili, and Chinese
-- **Simple Web Interface**: Easy-to-use Streamlit interface
+- **Simple Web Interface**: Easy-to-use Streamlit interface with tabbed input options
 - **GPU Acceleration**: Automatically uses GPU if available for faster generation
 
 ## 🚀 Installation
@@ -67,16 +69,29 @@ brew install python@3.11
    ```
 
 2. **Use the application:**
+   
+   **Option A: Record Audio (Recommended)**
+   - Click the "🎤 Record Audio" tab
+   - Click "🎙️ Click to Record" button to start recording
+   - Speak for 10-15 seconds
+   - Click "⏹️ Click to Stop" to finish recording
+   - Your recorded audio will be displayed
+   
+   **Option B: Upload File**
+   - Click the "📤 Upload File" tab
    - Upload a 10-15 second `.wav` file of the target voice
+   
+   **Then:**
    - Enter the text you want to generate
    - Select the language of your text
-   - Click "Generate Speech"
+   - Click "🎵 Generate Speech"
    - Listen to the generated audio!
 
 ## 📋 Requirements
 
 - Python 3.10+
 - streamlit
+- streamlit-audiorecorder
 - chatterbox-tts
 - torch
 - torchaudio

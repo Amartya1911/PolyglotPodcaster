@@ -85,6 +85,15 @@ def main():
                 temp_input.write(uploaded_file.getvalue())
                 temp_input_path = temp_input.name
             
+            # Validate audio file
+            try:
+                import torchaudio as ta
+                audio_data, sample_rate = ta.load(temp_input_path)
+                st.info(f"📊 Audio info: Shape={audio_data.shape}, Sample rate={sample_rate}Hz, Duration={audio_data.shape[1]/sample_rate:.2f}s")
+            except Exception as e:
+                st.error(f"⚠️ Could not read audio file: {e}")
+                return
+            
             # Generate speech
             with st.spinner(f"🎵 Generating audio in {selected_language}... this may take a moment."):
                 wav = model.generate(
@@ -95,9 +104,16 @@ def main():
             
             # Save output
             output_path = "output.wav"
+            
+            # Ensure wav is in correct shape for saving (channels, samples)
+            if wav.dim() == 1:
+                wav = wav.unsqueeze(0)  # Add channel dimension: (samples,) -> (1, samples)
+            elif wav.dim() == 2 and wav.shape[0] > wav.shape[1]:
+                wav = wav.T  # Transpose if needed: (samples, channels) -> (channels, samples)
+            
             torchaudio.save(
                 output_path,
-                wav.unsqueeze(0),
+                wav,
                 model.sr,
                 bits_per_sample=16
             )

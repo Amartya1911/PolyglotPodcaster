@@ -2,3 +2,4 @@ streamlit
 torch
 torchaudio
 chatterbox-tts
+streamlit-audiorecorder
